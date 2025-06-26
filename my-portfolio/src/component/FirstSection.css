@@ -1,8 +1,8 @@
 .FirstSection {
-  position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 .bg-img {
@@ -11,10 +11,14 @@
   display: block;
 }
 
-.content {
+.BackgroundSection {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+  z-index: -1;
+}
+
+/* Optional: add spacing between nav and background image on mobile */
+@media (max-width: 768px) {
+  .BackgroundSection {
+    margin-top: 3rem;
+  }
 }
