@@ -1,0 +1,28 @@
+.NavBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+/* .NavLink:hover {
+  background-color: #36b37f;
+  padding: 12px;
+  border-radius: 4px;
+  color: #fff;
+} */
+
+.NavItems {
+  font-family: "Inter", sans-serif;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin-top: 1%;
+  font-weight: 600;
+  color: #344563;
+}
+
+.NavLink {
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
