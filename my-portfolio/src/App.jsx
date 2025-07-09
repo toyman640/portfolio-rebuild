@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import FirstSection from './component/FirstSection'
-import SectionSection from './component/SecondSections/SecondSection'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import FirstSection from './component/FirstSection';
+import SectionSection from './component/SecondSections/SecondSection';
+import ThirdSection from './component/AboutMe/ThirdSection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
     <>
       <FirstSection />
       <SectionSection />
+      <ThirdSection />
       {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
