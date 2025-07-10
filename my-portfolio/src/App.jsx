@@ -5,6 +5,7 @@ import './App.css';
 import FirstSection from './component/FirstSection';
 import SectionSection from './component/SecondSections/SecondSection';
 import ThirdSection from './component/AboutMe/ThirdSection';
+import StackSection from './component/Stacks/StackSection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <FirstSection />
       <SectionSection />
       <ThirdSection />
+      <StackSection />
       {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
