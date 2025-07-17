@@ -32,11 +32,11 @@ const StackCards = () => {
         <Col xs={12} md={6} lg={4} className="mb-4">
           <Card className="text-center d-flex flex-column justify-content-center StackCard">
             <div className="CardImageWrapper">
-              <Card.Img variant="top" className="StackCardImage" src={LanguageIcon} />
+              <Card.Img variant="top" className="StackCardImage" src={FrameworkIcon} />
             </div>
             <Card.Body>
               <Card.Title className="StackCardTitle">Frameworks</Card.Title>
-              <Row className="justify-content-center g-2 mt-3">
+              <Row className="justify-content-center g-2 mt-3 ">
                 <Col xs="auto"><p className="StackText">React.js</p></Col>
                 <Col xs="auto"><p className="StackText">Ruby on Rails</p></Col>
                 <Col xs="auto"><p className="StackText">RSpec</p></Col>
@@ -51,7 +51,7 @@ const StackCards = () => {
         <Col xs={12} md={6} lg={4} className="mb-4">
           <Card className="text-center d-flex flex-column justify-content-center StackCard">
             <div className="CardImageWrapper">
-              <Card.Img variant="top" className="StackCardImage" src={LanguageIcon} />
+              <Card.Img variant="top" className="StackCardImage" src={SkillsIcon} />
             </div>
             <Card.Body>
               <Card.Title className="StackCardTitle">Skills</Card.Title>
