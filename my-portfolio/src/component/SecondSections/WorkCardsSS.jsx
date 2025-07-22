@@ -68,11 +68,11 @@ const WorksCards = () => {
                   onClick={() =>
                     handleShow(
                       "Skaal Meat",
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the relea",
+                      "A farm management app with multiple user interfaces. It tracks livestock events like birthing, mortality, and culling, manages drug inventory with low-stock alerts, and handles procurement records for cattle, pigs, goats, and sheep.",
                       ["HTML", "CSS", "JavaScript", "Django", "MYSQL"],
                       SkaalHubCard,
-                      "https://live-skaalmeat.com",
-                      "https://github.com/user/skaalmeat"
+                      "https://skaalhub.pw/",
+                      "https://github.com/toyman640/farmapp"
                     )
                   }
                 >
@@ -108,7 +108,7 @@ const WorksCards = () => {
                     handleShow(
                       "Skaal Meat",
                       "A meat ordering and logistics platform for butchers and retailers.",
-                      ["HTML", "CSS", "JavaScript", "Django"], SkaalMeatCard, "https://live-skaalmeat.com", "https://github.com/user/skaalmeat"
+                      ["HTML", "CSS", "JavaScript", "Django"], SkaalMeatCard, "https://skaal-meats.onrender.com/", "https://github.com/toyman640/skaal-meats"
                     )
                   }
                 >
@@ -147,8 +147,8 @@ const WorksCards = () => {
                   onClick={() =>
                     handleShow(
                       "Myunicamp",
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the relea",
-                      ["HTML", "CSS", "JavaScript", "Django", "DRF", "PostgreSQL"],  MyunicampCard, "https://live-skaalmeat.com", "https://github.com/user/skaalmeat"
+                      "A study abroad platform with multiple user interfaces for students, staff, and admins. Students can submit applications, access a personalized dashboard with study materials to prepare for interviews, and track their progress. Admin and staff users manage applications, respond to student queries, and oversee operations.",
+                      ["HTML", "CSS", "JavaScript", "Django", "DRF", "PostgreSQL"],  MyunicampCard, "https://myunicamp.com/", "https://github.com/user/skaalmeat"
                     )
                   }
                 >
@@ -181,8 +181,8 @@ const WorksCards = () => {
                   onClick={() =>
                     handleShow(
                       "Seamless Constructions",
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the relea",
-                      ["React", "Redux", "Tailwind", "CSS", "Github"],  SeamlessCard, "https://live-skaalmeat.com", "https://github.com/user/skaalmeat"
+                      "A construction company platform built to help clients monitor their ongoing building projects in real time. It enables seamless collaboration between contractors, site managers, and clients — from planning to project delivery. With a user-friendly dashboard, clients can stay updated on progress, upload documents, and communicate directly with the construction team.",
+                      ["React", "Redux", "Tailwind", "CSS", "Github"],  SeamlessCard, "https://buildwithseamless.co/", "https://github.com/user/skaalmeat"
                     )
                   }
                 >
@@ -204,8 +204,28 @@ const WorksCards = () => {
           <div className="d-flex justify-content-between p-2">
             <Modal.Title className="ModalTitle">{modalData.title}</Modal.Title>
             <div className="d-flex gap-2">
-              <button className="ModalButton"><img src={SeeLive} alt="" srcset="" /> See live</button>
-              <button className="ModalButton"><img src={SeeGitHub} alt="" srcset="" /> See source</button>
+              {/* <button className="ModalButton" onClick={() => window.open(modalData.liveLink, "_blank")}><img src={SeeLive} alt="" srcset="" /> See live</button>
+              <button className="ModalButton" onClick={() => window.open(modalData.githubLink, "_blank")}><img src={SeeGitHub} alt="" srcset="" /> See source</button> */}
+             <button
+                className="ModalButton"
+                onClick={() =>
+                  modalData.liveLink
+                    ? window.open(modalData.liveLink, "_blank")
+                    : alert("Live link not available")
+                }
+              >
+                <img src={SeeLive} alt="" /> See live
+              </button>
+              <button
+                className="ModalButton"
+                onClick={() =>
+                  modalData.githubLink
+                    ? window.open(modalData.githubLink, "_blank")
+                    : alert("Source link not available")
+                }
+              >
+                <img src={SeeGitHub} alt="" /> See source
+              </button>
             </div>
           </div>
           <div className="d-flex flex-wrap gap-2 py-3">
@@ -213,7 +233,7 @@ const WorksCards = () => {
               <span key={index} className="StackButton">{tech}</span>
             ))}
           </div>
-          <p>{modalData.description}</p>
+          <p className="CardDescription">{modalData.description}</p>
         </Modal.Body>
         {/* <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
