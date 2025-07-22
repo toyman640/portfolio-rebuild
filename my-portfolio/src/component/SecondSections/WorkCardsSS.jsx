@@ -3,7 +3,9 @@ import { Row, Col, Card, Container, Modal, Button } from "react-bootstrap";
 import SkaalHubCard from "../../assets/skaal-card.png";
 import MyunicampCard from "../../assets/myunicamp-card.png";
 import SeamlessCard from "../../assets/seamless-card.png";
+import SkaalMeatCard from "../../assets/skaal-meat-card.png";
 import "./WorkCardSS.css";
+import { motion } from "framer-motion";
 
 const WorksCards = () => {
   const [showModal, setShowModal] = useState(false);
@@ -29,7 +31,7 @@ const WorksCards = () => {
         {/* Card 1 */}
         <Col xs={12} md={6} lg={6} className="mb-4">
           <Card className="StackCards">
-            <Card.Img variant="top" src={SkaalHubCard} className="" />
+            <Card.Img variant="top" src={SkaalHubCard} className="CardImage" />
             <Card.Body className="d-flex flex-column flex-grow-1">
               <Card.Title className="text-center CardTitle">Skaal Hub</Card.Title>
               <Card.Text className="flex-grow-1">
@@ -43,7 +45,7 @@ const WorksCards = () => {
             </Card.Body>
             <Card.Footer className="CardFooter">
               <div className="text-center">
-                <button
+                {/* <button
                   className="ProjectDetails"
                   onClick={() =>
                     handleShow(
@@ -54,7 +56,27 @@ const WorksCards = () => {
                   }
                 >
                   See project
-                </button>
+                </button> */}
+                <motion.button
+                  className="ProjectDetails"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring" }}
+                  onClick={() =>
+                    handleShow(
+                      "Skaal Meat",
+                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the relea",
+                      ["HTML", "CSS", "JavaScript", "Django", "MYSQL"],
+                      SkaalHubCard,
+                      "https://live-skaalmeat.com",
+                      "https://github.com/user/skaalmeat"
+                    )
+                  }
+                >
+                  See project
+                </motion.button>
+
+                
               </div>
             </Card.Footer>
           </Card>
@@ -63,7 +85,7 @@ const WorksCards = () => {
         {/* Card 2 */}
         <Col xs={12} md={6} lg={6} className="mb-4">
           <Card className="StackCards">
-            <Card.Img variant="top" src={SkaalHubCard} />
+            <Card.Img variant="top" src={SkaalMeatCard} className="CardImage" />
             <Card.Body className="d-flex flex-column flex-grow-1">
               <Card.Title className="text-center CardTitle">Skaal Meat</Card.Title>
               <Card.Text className="flex-grow-1">
@@ -83,7 +105,7 @@ const WorksCards = () => {
                     handleShow(
                       "Skaal Meat",
                       "A meat ordering and logistics platform for butchers and retailers.",
-                      ["HTML", "CSS", "JavaScript", "Django"]
+                      ["HTML", "CSS", "JavaScript", "Django"], SkaalMeatCard, "https://live-skaalmeat.com", "https://github.com/user/skaalmeat"
                     )
                   }
                 >
@@ -97,7 +119,7 @@ const WorksCards = () => {
         {/* Card 3 */}
         <Col xs={12} md={6} lg={6} className="mb-4">
           <Card className="StackCards">
-            <Card.Img variant="top" src={MyunicampCard} />
+            <Card.Img variant="top" src={MyunicampCard} className="CardImage" />
             <Card.Body className="d-flex flex-column flex-grow-1">
               <Card.Title className="text-center CardTitle">Myunicamp</Card.Title>
               <Card.Text className="flex-grow-1">
@@ -137,7 +159,7 @@ const WorksCards = () => {
         {/* Card 4 */}
         <Col xs={12} md={6} lg={6} className="mb-4">
           <Card className="StackCards">
-            <Card.Img variant="top" src={SeamlessCard} />
+            <Card.Img variant="top" src={SeamlessCard} className="CardImage" />
             <Card.Body className="d-flex flex-column flex-grow-1">
               <Card.Title className="text-center CardTitle">Seamless</Card.Title>
               <Card.Text className="flex-grow-1">
