@@ -4,8 +4,11 @@ import SkaalHubCard from "../../assets/skaal-card.png";
 import MyunicampCard from "../../assets/myunicamp-card.png";
 import SeamlessCard from "../../assets/seamless-card.png";
 import SkaalMeatCard from "../../assets/skaal-meat-card.png";
+import SeeGitHub from "../../assets/see-github.svg";
+import SeeLive from "../../assets/see-live.svg";
 import "./WorkCardSS.css";
 import { motion } from "framer-motion";
+
 
 const WorksCards = () => {
   const [showModal, setShowModal] = useState(false);
@@ -201,8 +204,8 @@ const WorksCards = () => {
           <div className="d-flex justify-content-between p-2">
             <Modal.Title className="ModalTitle">{modalData.title}</Modal.Title>
             <div className="d-flex gap-2">
-              <button className="ModalButton">See live</button>
-              <button className="ModalButton">See source</button>
+              <button className="ModalButton"><img src={SeeLive} alt="" srcset="" /> See live</button>
+              <button className="ModalButton"><img src={SeeGitHub} alt="" srcset="" /> See source</button>
             </div>
           </div>
           <div className="d-flex flex-wrap gap-2 py-3">
