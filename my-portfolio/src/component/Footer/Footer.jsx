@@ -23,7 +23,7 @@ const Footer = () => {
         <li>
           <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
             <img src={AngelIcon} alt="Angel List" />
-          </a>
+          </a>.
         </li>
       </ul>
     </div>
