@@ -67,3 +67,30 @@
     display: block;
   }
 }
+
+/* .MenuLink {
+  font-family: "Inter", sans-serif;
+  text-decoration: none !important;
+  color: #344563;
+  font-weight: 600;
+} */
+
+.MenuLink {
+  font-family: "Inter", sans-serif;
+  text-decoration: none !important;
+  color: #344563;
+  font-weight: 600;
+  display: block; /* so it fills the li */
+  /* padding: 12px;   match padding from motion.li */
+}
+
+.NavLink:hover .MenuLink {
+  color: #fff !important;
+}
+
+.MenuLinkMobile {
+  font-family: "Inter", sans-serif;
+  text-decoration: none !important;
+  color: #344563;
+  font-weight: 600;
+}
