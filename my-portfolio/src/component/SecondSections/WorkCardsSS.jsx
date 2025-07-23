@@ -195,11 +195,12 @@ const WorksCards = () => {
       </Row>
 
       {/* Modal */}
-      <Modal show={showModal} onHide={handleClose} centered size="lg">
+   
+      <Modal show={showModal} onHide={handleClose} centered size="lg" dialogClassName="custom-modal">
         <Modal.Header closeButton>
           {/* <Modal.Title>{modalData.title}</Modal.Title> */}
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body-scroll">
           <img src={modalData.image} className="img-fluid" alt={modalData.title} srcset="" />
           <div className="d-flex justify-content-between p-2">
             <Modal.Title className="ModalTitle">{modalData.title}</Modal.Title>

@@ -90,3 +90,15 @@
   color: #344563;
 }
 
+.custom-modal .modal-content {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+
