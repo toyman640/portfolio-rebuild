@@ -36,6 +36,18 @@
   margin-top: 3%;
 }
 
+.ResumeButton:hover {
+  /* background-color: #d6e0dd; */
+  box-shadow: 0px 8px 16px 0px rgba(54, 179, 127, 0.24);
+  cursor: pointer;
+}
+
+.ResumeButton:active {
+  background-color: #008552; /* darker on press */
+  transform: scale(0.97);    /* subtle pressed effect */
+}
+
+
 @media (max-width: 768px) {
   .SectionThree {
    background-size: 100px, 100px;
