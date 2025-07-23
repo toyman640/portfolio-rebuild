@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +13,9 @@ const ContactForm = () => {
     message: ''
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
-    // Load saved form data from localStorage if available
     const savedData = localStorage.getItem("contactFormData");
     if (savedData) {
       setFormData(JSON.parse(savedData));
@@ -21,9 +23,17 @@ const ContactForm = () => {
   }, []);
 
   useEffect(() => {
-    // Persist form data to localStorage on change
     localStorage.setItem("contactFormData", JSON.stringify(formData));
   }, [formData]);
+
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,13 +50,11 @@ const ContactForm = () => {
       const res = await fetch("https://formspree.io/f/xbjezrzn", {
         method: "POST",
         body: data,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (res.ok) {
-        alert("Message sent successfully!");
+        setSubmitted(true);
         localStorage.removeItem("contactFormData");
         setFormData({
           firstName: '',
@@ -57,13 +65,19 @@ const ContactForm = () => {
       } else {
         alert("Something went wrong. Try again.");
       }
-    } catch (err) {
+    } catch {
       alert("Network error. Try again.");
     }
   };
 
   return (
     <div>
+      {submitted && (
+        <Alert variant="success">
+          ✅ Message sent successfully! We'll be in touch shortly.
+        </Alert>
+      )}
+
       <Form onSubmit={handleSubmit}>
         <Row>
           <Form.Group as={Col} md="6" className="mb-3">
