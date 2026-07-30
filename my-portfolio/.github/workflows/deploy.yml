@@ -25,17 +25,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
+          cache-dependency-path: ./my-portfolio/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./my-portfolio  # <-- Tells GitHub to run this inside my-portfolio
 
       - name: Build Vite project
         run: npm run build
+        working-directory: ./my-portfolio  # <-- Tells GitHub to run the build inside my-portfolio
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./my-portfolio/dist
 
   deploy:
     runs-on: ubuntu-latest
